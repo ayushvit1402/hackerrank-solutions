@@ -1,0 +1,27 @@
+# ──────────────────────────────────────────────────
+# Link        https://www.hackerrank.com/challenges/nested-list/problem?isFullScreen=true
+# Problem     Nested Lists
+# Difficulty  Easy
+# Subdomain   Basic Data Types
+# Platform    HackerRank
+# Language    pypy3
+# Status      Accepted
+# Submitted   2026-08-09, 01:12 p.m.
+# ──────────────────────────────────────────────────
+
+if __name__ == '__main__':
+    
+    students = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        
+        students.append([name, score])
+        
+    u_scr = sorted(list(set(student[1] for student in students)))
+    sec_lg = u_scr[1] 
+        
+    names = sorted(student[0] for student in students if student[1] == sec_lg)
+        
+    for name in names:
+        print(name)
